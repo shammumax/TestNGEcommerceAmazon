@@ -37,7 +37,7 @@ public class DeliveryAddressTest extends Base {
 	}
 
 	@Test(priority = 1)
-	public void createDeliveryAddress() {	
+	public void createDeliveryAddress() throws InterruptedException {	
 		homePage.clickAccountAndLists();
 		yourAccountPage.clickYoursAddressBtn();
 		yourAddressPage.addAddress();
@@ -48,6 +48,7 @@ public class DeliveryAddressTest extends Base {
 		addAddressPage.setAreaSectorVillageStreet("randomstreet");
 		addAddressPage.setLandMark("randomlandmark");
 		addAddressPage.clickAddAddressBtn();
+		Thread.sleep(6000);
 		assertTrue(yourAddressPage.verifyAddressAddedOrNot());	
 	}
 	//@Test(priority = 3)
